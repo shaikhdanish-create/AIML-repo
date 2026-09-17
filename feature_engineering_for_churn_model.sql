@@ -1,4 +1,4 @@
--- feature_engineering_for_churn_model.sql
+-- feature_engineering_for_churn_model.sql 
 --
 -- Example SQL used to prepare a training dataset for a customer churn
 -- ML model. Demonstrates common feature engineering patterns done in
