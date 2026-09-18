@@ -97,3 +97,6 @@ SELECT first_name, last_name, salary FROM employees ORDER BY salary ASC;
 -- Multiple-column sorting applies the second sort within ties of the first
 
 -- LIMIT restricts the number of returned rows
+
+-- Date filtering selects employees hired from 2021 onward
+SELECT first_name, last_name, hire_date FROM employees WHERE hire_date >= '2021-01-01';
