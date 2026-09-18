@@ -76,3 +76,6 @@ LIMIT 3;
 -- OR: at least one condition must be true
 
 -- IN: match any value from a list
+
+-- NOT IN: exclude a list of values
+SELECT first_name, last_name, department FROM employees WHERE department NOT IN ('Sales', 'HR');
