@@ -88,3 +88,6 @@ SELECT first_name, last_name, department FROM employees WHERE department NOT IN 
 SELECT first_name, last_name FROM employees WHERE first_name LIKE '_a%';
 
 -- ORDER BY controls result ordering
+
+-- ASC sorts from low to high / A to Z
+SELECT first_name, last_name, salary FROM employees ORDER BY salary ASC;
