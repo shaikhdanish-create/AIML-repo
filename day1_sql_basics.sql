@@ -83,3 +83,6 @@ SELECT first_name, last_name, department FROM employees WHERE department NOT IN 
 -- BETWEEN includes both boundary values
 
 -- LIKE supports pattern matching
+
+-- Wildcards: % matches multiple characters; _ matches one character
+SELECT first_name, last_name FROM employees WHERE first_name LIKE '_a%';
