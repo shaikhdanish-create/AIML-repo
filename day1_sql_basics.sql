@@ -81,3 +81,5 @@ LIMIT 3;
 SELECT first_name, last_name, department FROM employees WHERE department NOT IN ('Sales', 'HR');
 
 -- BETWEEN includes both boundary values
+
+-- LIKE supports pattern matching
