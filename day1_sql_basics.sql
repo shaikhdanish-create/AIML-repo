@@ -93,3 +93,5 @@ SELECT first_name, last_name FROM employees WHERE first_name LIKE '_a%';
 SELECT first_name, last_name, salary FROM employees ORDER BY salary ASC;
 
 -- DESC sorts from high to low / Z to A
+
+-- Multiple-column sorting applies the second sort within ties of the first
