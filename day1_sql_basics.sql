@@ -72,3 +72,5 @@ LIMIT 3;
 -- Comparison operators: use >, <, >=, <=, = and <> for numeric/text comparisons
 
 -- AND: every condition must be true
+
+-- OR: at least one condition must be true
