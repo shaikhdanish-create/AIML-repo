@@ -70,3 +70,5 @@ LIMIT 3;
 -- WHERE basics: filter rows using an exact condition
 
 -- Comparison operators: use >, <, >=, <=, = and <> for numeric/text comparisons
+
+-- AND: every condition must be true
