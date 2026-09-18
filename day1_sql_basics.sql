@@ -103,3 +103,6 @@ SELECT first_name, last_name, hire_date FROM employees WHERE hire_date >= '2021-
 
 -- Combined filters can use parentheses for clear OR logic
 SELECT first_name, last_name, department, salary FROM employees WHERE (department = 'Sales' OR department = 'Marketing') AND salary >= 50000;
+
+-- Practice: find employees in Engineering earning between 60000 and 100000
+SELECT first_name, last_name, salary FROM employees WHERE department = 'Engineering' AND salary BETWEEN 60000 AND 100000;
