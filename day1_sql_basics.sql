@@ -66,3 +66,5 @@ ORDER BY salary DESC
 LIMIT 3;
 
 -- SELECT basics: explicit columns keep queries focused
+
+-- WHERE basics: filter rows using an exact condition
