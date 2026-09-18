@@ -74,3 +74,5 @@ LIMIT 3;
 -- AND: every condition must be true
 
 -- OR: at least one condition must be true
+
+-- IN: match any value from a list
