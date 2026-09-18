@@ -1,2 +1,2 @@
 # AIML-repo
-all libraries here :- numpy, pandas, matplotlib, seaborn
+all libraries here :- numpy, pandas, matplotlib, seaborn, SQL
