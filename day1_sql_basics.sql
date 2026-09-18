@@ -64,3 +64,5 @@ WHERE department IN ('Engineering', 'Sales')
   AND hire_date > '2020-01-01'
 ORDER BY salary DESC
 LIMIT 3;
+
+-- SELECT basics: explicit columns keep queries focused
