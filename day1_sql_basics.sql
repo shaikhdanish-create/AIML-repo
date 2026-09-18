@@ -68,3 +68,5 @@ LIMIT 3;
 -- SELECT basics: explicit columns keep queries focused
 
 -- WHERE basics: filter rows using an exact condition
+
+-- Comparison operators: use >, <, >=, <=, = and <> for numeric/text comparisons
