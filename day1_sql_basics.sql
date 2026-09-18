@@ -86,3 +86,5 @@ SELECT first_name, last_name, department FROM employees WHERE department NOT IN 
 
 -- Wildcards: % matches multiple characters; _ matches one character
 SELECT first_name, last_name FROM employees WHERE first_name LIKE '_a%';
+
+-- ORDER BY controls result ordering
