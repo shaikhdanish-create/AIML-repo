@@ -100,3 +100,6 @@ SELECT first_name, last_name, salary FROM employees ORDER BY salary ASC;
 
 -- Date filtering selects employees hired from 2021 onward
 SELECT first_name, last_name, hire_date FROM employees WHERE hire_date >= '2021-01-01';
+
+-- Combined filters can use parentheses for clear OR logic
+SELECT first_name, last_name, department, salary FROM employees WHERE (department = 'Sales' OR department = 'Marketing') AND salary >= 50000;
