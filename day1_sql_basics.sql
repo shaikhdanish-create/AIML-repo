@@ -111,3 +111,6 @@ SELECT first_name, last_name, salary FROM employees WHERE department = 'Engineer
 
 -- NULL check: use IS NULL instead of = NULL
 SELECT first_name, last_name FROM employees WHERE city IS NULL;
+
+-- Aliases make selected columns easier to read
+SELECT first_name AS employee_first_name, salary AS annual_salary FROM employees;
