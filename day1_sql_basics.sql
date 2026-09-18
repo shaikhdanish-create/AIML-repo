@@ -79,3 +79,5 @@ LIMIT 3;
 
 -- NOT IN: exclude a list of values
 SELECT first_name, last_name, department FROM employees WHERE department NOT IN ('Sales', 'HR');
+
+-- BETWEEN includes both boundary values
