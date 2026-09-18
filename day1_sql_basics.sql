@@ -106,3 +106,5 @@ SELECT first_name, last_name, department, salary FROM employees WHERE (departmen
 
 -- Practice: find employees in Engineering earning between 60000 and 100000
 SELECT first_name, last_name, salary FROM employees WHERE department = 'Engineering' AND salary BETWEEN 60000 AND 100000;
+
+-- Day 1 recap: SELECT, WHERE, operators, IN, BETWEEN, LIKE, ORDER BY and LIMIT
