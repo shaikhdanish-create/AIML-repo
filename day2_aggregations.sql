@@ -84,3 +84,6 @@ HAVING COUNT(*) >= 2;
 
 -- COUNT practice: count employees with a known city
 SELECT COUNT(city) AS employees_with_city FROM employees;
+
+-- SUM practice: total order value
+SELECT SUM(order_amount) AS total_order_value FROM orders;
