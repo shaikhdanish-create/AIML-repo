@@ -93,3 +93,6 @@ SELECT AVG(order_amount) AS avg_order_value FROM orders;
 
 -- MIN/MAX practice: smallest and largest order
 SELECT MIN(order_amount) AS smallest_order, MAX(order_amount) AS largest_order FROM orders;
+
+-- GROUP BY practice: total salary by department
+SELECT department, SUM(salary) AS total_salary FROM employees GROUP BY department;
