@@ -90,3 +90,6 @@ SELECT SUM(order_amount) AS total_order_value FROM orders;
 
 -- AVG practice: average order value
 SELECT AVG(order_amount) AS avg_order_value FROM orders;
+
+-- MIN/MAX practice: smallest and largest order
+SELECT MIN(order_amount) AS smallest_order, MAX(order_amount) AS largest_order FROM orders;
