@@ -75,3 +75,9 @@ ORDER BY avg_salary DESC;
 SELECT city, COUNT(*) AS employee_count
 FROM employees
 GROUP BY city;
+
+-- Practice HAVING: show cities with at least 2 employees
+SELECT city, COUNT(*) AS employee_count
+FROM employees
+GROUP BY city
+HAVING COUNT(*) >= 2;
