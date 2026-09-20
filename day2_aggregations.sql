@@ -102,3 +102,6 @@ SELECT city, COUNT(*) AS employee_count FROM employees GROUP BY city;
 
 -- Multiple aggregates: summarize each city
 SELECT city, COUNT(*) AS employee_count, AVG(salary) AS avg_salary FROM employees GROUP BY city;
+
+-- HAVING filters grouped results
+SELECT department, COUNT(*) AS employee_count FROM employees GROUP BY department HAVING COUNT(*) >= 2;
