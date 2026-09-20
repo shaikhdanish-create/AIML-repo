@@ -70,3 +70,8 @@ FROM employees
 GROUP BY department
 HAVING COUNT(*) > 3
 ORDER BY avg_salary DESC;
+
+-- Practice aggregation: count employees in each city
+SELECT city, COUNT(*) AS employee_count
+FROM employees
+GROUP BY city;
