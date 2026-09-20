@@ -81,3 +81,6 @@ SELECT city, COUNT(*) AS employee_count
 FROM employees
 GROUP BY city
 HAVING COUNT(*) >= 2;
+
+-- COUNT practice: count employees with a known city
+SELECT COUNT(city) AS employees_with_city FROM employees;
