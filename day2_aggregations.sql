@@ -87,3 +87,6 @@ SELECT COUNT(city) AS employees_with_city FROM employees;
 
 -- SUM practice: total order value
 SELECT SUM(order_amount) AS total_order_value FROM orders;
+
+-- AVG practice: average order value
+SELECT AVG(order_amount) AS avg_order_value FROM orders;
