@@ -99,3 +99,6 @@ SELECT department, SUM(salary) AS total_salary FROM employees GROUP BY departmen
 
 -- COUNT with GROUP BY: employees by city
 SELECT city, COUNT(*) AS employee_count FROM employees GROUP BY city;
+
+-- Multiple aggregates: summarize each city
+SELECT city, COUNT(*) AS employee_count, AVG(salary) AS avg_salary FROM employees GROUP BY city;
