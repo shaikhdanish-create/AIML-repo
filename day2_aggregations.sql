@@ -105,3 +105,6 @@ SELECT city, COUNT(*) AS employee_count, AVG(salary) AS avg_salary FROM employee
 
 -- HAVING filters grouped results
 SELECT department, COUNT(*) AS employee_count FROM employees GROUP BY department HAVING COUNT(*) >= 2;
+
+-- HAVING with SUM: departments with total salary above 200000
+SELECT department, SUM(salary) AS total_salary FROM employees GROUP BY department HAVING SUM(salary) > 200000;
