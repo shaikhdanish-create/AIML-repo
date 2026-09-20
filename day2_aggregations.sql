@@ -96,3 +96,6 @@ SELECT MIN(order_amount) AS smallest_order, MAX(order_amount) AS largest_order F
 
 -- GROUP BY practice: total salary by department
 SELECT department, SUM(salary) AS total_salary FROM employees GROUP BY department;
+
+-- COUNT with GROUP BY: employees by city
+SELECT city, COUNT(*) AS employee_count FROM employees GROUP BY city;
