@@ -94,3 +94,5 @@ SELECT e.first_name AS employee, m.first_name AS manager FROM employees e JOIN e
 SELECT c.customer_name AS customer, o.order_amount AS amount FROM customers c JOIN orders o ON c.customer_id = o.customer_id;
 
 SELECT c.customer_name, o.order_amount FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE o.order_amount > 1000;
+
+SELECT c.customer_name, COUNT(o.order_id) AS order_count FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_name;
