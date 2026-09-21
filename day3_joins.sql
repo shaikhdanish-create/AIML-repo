@@ -115,3 +115,5 @@ SELECT c.customer_name, COALESCE(o.order_amount, 0) AS order_amount FROM custome
 SELECT c.customer_name, o.order_id FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE c.city = 'Nagpur';
 
 SELECT c.customer_name, SUM(o.order_amount) AS total_spend FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_name ORDER BY total_spend DESC LIMIT 5;
+
+-- Day 3 complete: INNER, LEFT, RIGHT, FULL OUTER and self JOIN practice
