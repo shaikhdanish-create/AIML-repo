@@ -102,3 +102,5 @@ SELECT c.customer_name, SUM(o.order_amount) AS total_spend FROM customers c JOIN
 SELECT c.customer_name, AVG(o.order_amount) AS average_order FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_name;
 
 SELECT c.customer_name, SUM(o.order_amount) AS total_spend FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_name HAVING SUM(o.order_amount) > 5000;
+
+SELECT c.customer_name, SUM(o.order_amount) AS total_spend FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_name ORDER BY total_spend DESC;
