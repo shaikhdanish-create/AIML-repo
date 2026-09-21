@@ -92,3 +92,5 @@ SELECT e.first_name AS employee, m.first_name AS manager FROM employees e JOIN e
 -- Join aliases improve readability
 
 SELECT c.customer_name AS customer, o.order_amount AS amount FROM customers c JOIN orders o ON c.customer_id = o.customer_id;
+
+SELECT c.customer_name, o.order_amount FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE o.order_amount > 1000;
