@@ -70,3 +70,6 @@ INNER JOIN orders o ON c.customer_id = o.customer_id
 GROUP BY c.customer_name, c.city
 ORDER BY total_spend DESC
 LIMIT 5;
+
+-- INNER JOIN practice: show customer names with order dates
+SELECT c.customer_name, o.order_date FROM customers c INNER JOIN orders o ON c.customer_id = o.customer_id;
