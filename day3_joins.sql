@@ -90,3 +90,5 @@ SELECT c.customer_name, o.order_id FROM customers c FULL OUTER JOIN orders o ON 
 SELECT e.first_name AS employee, m.first_name AS manager FROM employees e JOIN employees m ON e.manager_id = m.employee_id;
 
 -- Join aliases improve readability
+
+SELECT c.customer_name AS customer, o.order_amount AS amount FROM customers c JOIN orders o ON c.customer_id = o.customer_id;
