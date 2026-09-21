@@ -79,3 +79,6 @@ SELECT c.customer_name, o.order_id FROM customers c LEFT JOIN orders o ON c.cust
 
 -- Find customers without orders
 SELECT c.customer_name FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id WHERE o.order_id IS NULL;
+
+-- RIGHT JOIN practice: keep every order in the result
+SELECT o.order_id, c.customer_name FROM customers c RIGHT JOIN orders o ON c.customer_id = o.customer_id;
