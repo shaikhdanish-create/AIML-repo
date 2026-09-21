@@ -109,3 +109,5 @@ SELECT o.order_id, c.customer_name, c.city FROM orders o JOIN customers c ON o.c
 
 -- Practice: find customers who placed more than 2 orders
 SELECT c.customer_name, COUNT(o.order_id) AS order_count FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_name HAVING COUNT(o.order_id) > 2;
+
+SELECT c.customer_name, COALESCE(o.order_amount, 0) AS order_amount FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id;
