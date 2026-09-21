@@ -76,3 +76,6 @@ SELECT c.customer_name, o.order_date FROM customers c INNER JOIN orders o ON c.c
 
 -- LEFT JOIN practice: keep every customer in the result
 SELECT c.customer_name, o.order_id FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id;
+
+-- Find customers without orders
+SELECT c.customer_name FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id WHERE o.order_id IS NULL;
