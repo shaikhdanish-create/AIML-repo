@@ -82,3 +82,6 @@ SELECT c.customer_name FROM customers c LEFT JOIN orders o ON c.customer_id = o.
 
 -- RIGHT JOIN practice: keep every order in the result
 SELECT o.order_id, c.customer_name FROM customers c RIGHT JOIN orders o ON c.customer_id = o.customer_id;
+
+-- FULL OUTER JOIN practice: include matched and unmatched rows
+SELECT c.customer_name, o.order_id FROM customers c FULL OUTER JOIN orders o ON c.customer_id = o.customer_id;
