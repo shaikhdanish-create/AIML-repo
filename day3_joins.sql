@@ -73,3 +73,6 @@ LIMIT 5;
 
 -- INNER JOIN practice: show customer names with order dates
 SELECT c.customer_name, o.order_date FROM customers c INNER JOIN orders o ON c.customer_id = o.customer_id;
+
+-- LEFT JOIN practice: keep every customer in the result
+SELECT c.customer_name, o.order_id FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id;
