@@ -88,3 +88,5 @@ SELECT c.customer_name, o.order_id FROM customers c FULL OUTER JOIN orders o ON 
 
 -- Self JOIN practice: match employees to managers
 SELECT e.first_name AS employee, m.first_name AS manager FROM employees e JOIN employees m ON e.manager_id = m.employee_id;
+
+-- Join aliases improve readability
