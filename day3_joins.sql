@@ -25,14 +25,11 @@ LEFT JOIN orders o ON c.customer_id = o.customer_id
 WHERE o.order_id IS NULL;
 
 -- 4. RIGHT JOIN: all orders, with customer info if it exists
--- (equivalent to a LEFT JOIN with tables swapped - some databases
--- like SQLite don't support RIGHT JOIN directly)
 SELECT c.customer_name, o.order_id, o.order_amount
 FROM customers c
 RIGHT JOIN orders o ON c.customer_id = o.customer_id;
 
 -- 5. FULL OUTER JOIN: every customer and every order, matched where possible
--- (not supported in MySQL directly - emulate with UNION of LEFT and RIGHT JOIN)
 SELECT c.customer_name, o.order_id
 FROM customers c
 FULL OUTER JOIN orders o ON c.customer_id = o.customer_id;
@@ -43,26 +40,26 @@ SELECT e1.first_name AS employee_name,
 FROM employees e1
 JOIN employees e2 ON e1.manager_id = e2.employee_id;
 
--- 7. Self join with LEFT JOIN: include employees who have no manager (e.g. CEO)
+-- 7. Self join with LEFT JOIN: include employees who have no manager
 SELECT e1.first_name AS employee_name,
        e2.first_name AS manager_name
 FROM employees e1
 LEFT JOIN employees e2 ON e1.manager_id = e2.employee_id;
 
--- 8. Join + aggregation: total spend per customer, including customers with $0
+-- 8. Join + aggregation: total spend per customer
 SELECT c.customer_name,
        COALESCE(SUM(o.order_amount), 0) AS total_spend
 FROM customers c
 LEFT JOIN orders o ON c.customer_id = o.customer_id
 GROUP BY c.customer_name;
 
--- 9. Joining three tables: orders, customers, and their department (if applicable)
+-- 9. Join orders and customers filtered by city
 SELECT o.order_id, c.customer_name, c.city, o.order_amount
 FROM orders o
 INNER JOIN customers c ON o.customer_id = c.customer_id
 WHERE c.city = 'Nagpur';
 
--- 10. Combining it all: top 5 customers by total spend, including city
+-- 10. Top 5 customers by total spend
 SELECT c.customer_name, c.city,
        SUM(o.order_amount) AS total_spend
 FROM customers c
@@ -90,7 +87,6 @@ SELECT c.customer_name, o.order_id FROM customers c FULL OUTER JOIN orders o ON 
 SELECT e.first_name AS employee, m.first_name AS manager FROM employees e JOIN employees m ON e.manager_id = m.employee_id;
 
 -- Join aliases improve readability
-
 SELECT c.customer_name AS customer, o.order_amount AS amount FROM customers c JOIN orders o ON c.customer_id = o.customer_id;
 
 SELECT c.customer_name, o.order_amount FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE o.order_amount > 1000;
@@ -107,7 +103,6 @@ SELECT c.customer_name, SUM(o.order_amount) AS total_spend FROM customers c JOIN
 
 SELECT o.order_id, c.customer_name, c.city FROM orders o JOIN customers c ON o.customer_id = c.customer_id;
 
--- Practice: find customers who placed more than 2 orders
 SELECT c.customer_name, COUNT(o.order_id) AS order_count FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_name HAVING COUNT(o.order_id) > 2;
 
 SELECT c.customer_name, COALESCE(o.order_amount, 0) AS order_amount FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id;
@@ -117,3 +112,4 @@ SELECT c.customer_name, o.order_id FROM customers c JOIN orders o ON c.customer_
 SELECT c.customer_name, SUM(o.order_amount) AS total_spend FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_name ORDER BY total_spend DESC LIMIT 5;
 
 -- Day 3 complete: INNER, LEFT, RIGHT, FULL OUTER and self JOIN practice
+\n-- JOIN with date filter\nSELECT c.customer_name, o.order_date\nFROM customers c JOIN orders o ON c.customer_id = o.customer_id\nWHERE o.order_date >= '2026-01-01';\n
