@@ -112,4 +112,4 @@ SELECT c.customer_name, o.order_id FROM customers c JOIN orders o ON c.customer_
 SELECT c.customer_name, SUM(o.order_amount) AS total_spend FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_name ORDER BY total_spend DESC LIMIT 5;
 
 -- Day 3 complete: INNER, LEFT, RIGHT, FULL OUTER and self JOIN practice
-\n-- JOIN with date filter\nSELECT c.customer_name, o.order_date\nFROM customers c JOIN orders o ON c.customer_id = o.customer_id\nWHERE o.order_date >= '2026-01-01';\n
+\n-- JOIN with date filter\nSELECT c.customer_name, o.order_date\nFROM customers c JOIN orders o ON c.customer_id = o.customer_id\nWHERE o.order_date >= '2026-01-01';\n\n-- JOIN with order amount range\nSELECT c.customer_name, o.order_amount\nFROM customers c JOIN orders o ON c.customer_id = o.customer_id\nWHERE o.order_amount BETWEEN 500 AND 2000;\n
