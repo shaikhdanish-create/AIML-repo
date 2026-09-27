@@ -92,3 +92,6 @@ SELECT first_name, department, salary, MAX(salary) OVER (PARTITION BY department
 
 -- 19. Calculate department average salary
 SELECT first_name, department, salary, AVG(salary) OVER (PARTITION BY department) AS department_avg FROM employees;
+
+-- 20. Calculate each order's percentage of total sales
+SELECT order_id, order_amount, ROUND(100.0 * order_amount / SUM(order_amount) OVER (), 2) AS sales_percentage FROM orders;
