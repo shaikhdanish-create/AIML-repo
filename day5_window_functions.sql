@@ -107,3 +107,6 @@ SELECT order_id, order_date, AVG(order_amount) OVER (ORDER BY order_date) AS run
 
 -- 24. Highest salary in each department
 SELECT first_name, department, salary, MAX(salary) OVER (PARTITION BY department) AS max_dept_salary FROM employees;
+
+-- 25. Lowest salary in each department
+SELECT first_name, department, salary, MIN(salary) OVER (PARTITION BY department) AS min_dept_salary FROM employees;
