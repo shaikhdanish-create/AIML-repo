@@ -77,3 +77,6 @@ SELECT first_name, salary, RANK() OVER (ORDER BY salary DESC) AS overall_rank FR
 
 -- 14. Dense rank employees by salary
 SELECT first_name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank FROM employees;
+
+-- 15. Number orders for each customer
+SELECT customer_id, order_id, ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY order_date) AS order_num FROM orders;
