@@ -129,3 +129,8 @@ WHERE NOT EXISTS (
 SELECT order_id, customer_id, order_amount
 FROM orders
 WHERE order_amount > (SELECT AVG(order_amount) FROM orders);
+
+-- 15. Subquery: orders from the latest order date
+SELECT order_id, customer_id, order_date, order_amount
+FROM orders
+WHERE order_date = (SELECT MAX(order_date) FROM orders);
