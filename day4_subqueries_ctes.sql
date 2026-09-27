@@ -185,3 +185,13 @@ WITH customer_orders AS (
 SELECT customer_id, order_count
 FROM customer_orders
 ORDER BY order_count DESC;
+
+-- 21. CTE: count employees in each department
+WITH department_counts AS (
+    SELECT department, COUNT(employee_id) AS employee_count
+    FROM employees
+    GROUP BY department
+)
+SELECT department, employee_count
+FROM department_counts
+ORDER BY employee_count DESC;
