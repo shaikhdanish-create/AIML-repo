@@ -95,3 +95,6 @@ SELECT first_name, department, salary, AVG(salary) OVER (PARTITION BY department
 
 -- 20. Calculate each order's percentage of total sales
 SELECT order_id, order_amount, ROUND(100.0 * order_amount / SUM(order_amount) OVER (), 2) AS sales_percentage FROM orders;
+
+-- 21. Rank orders by amount
+SELECT order_id, order_amount, ROW_NUMBER() OVER (ORDER BY order_amount DESC) AS amount_position FROM orders;
