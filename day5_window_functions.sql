@@ -89,3 +89,6 @@ SELECT order_id, order_date, LEAD(order_date) OVER (ORDER BY order_date) AS next
 
 -- 18. Calculate salary difference from department maximum
 SELECT first_name, department, salary, MAX(salary) OVER (PARTITION BY department) - salary AS difference_from_max FROM employees;
+
+-- 19. Calculate department average salary
+SELECT first_name, department, salary, AVG(salary) OVER (PARTITION BY department) AS department_avg FROM employees;
