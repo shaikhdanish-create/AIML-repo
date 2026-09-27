@@ -96,3 +96,13 @@ WHERE salary = (SELECT MIN(salary) FROM employees);
 SELECT first_name, last_name, salary
 FROM employees
 WHERE salary = (SELECT MAX(salary) FROM employees);
+
+-- 11. Subquery: employees from departments with average salary above 55000
+SELECT first_name, department, salary
+FROM employees
+WHERE department IN (
+    SELECT department
+    FROM employees
+    GROUP BY department
+    HAVING AVG(salary) > 55000
+);
