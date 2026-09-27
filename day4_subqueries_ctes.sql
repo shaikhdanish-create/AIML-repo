@@ -115,3 +115,12 @@ WHERE EXISTS (
     FROM orders o
     WHERE o.customer_id = c.customer_id
 );
+
+-- 13. NOT EXISTS subquery: customers without orders
+SELECT c.customer_id, c.customer_name
+FROM customers c
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM orders o
+    WHERE o.customer_id = c.customer_id
+);
