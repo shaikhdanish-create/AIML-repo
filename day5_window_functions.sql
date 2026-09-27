@@ -71,3 +71,6 @@ FROM orders;
 
 -- 12. ROW_NUMBER ordered by employee name
 SELECT first_name, department, ROW_NUMBER() OVER (ORDER BY first_name) AS name_num FROM employees;
+
+-- 13. Rank all employees by salary
+SELECT first_name, salary, RANK() OVER (ORDER BY salary DESC) AS overall_rank FROM employees;
