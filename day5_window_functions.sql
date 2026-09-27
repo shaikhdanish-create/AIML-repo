@@ -119,3 +119,6 @@ SELECT first_name, department, salary, ROUND(100.0 * salary / SUM(salary) OVER (
 
 -- 28. Compare order amount with previous order
 SELECT order_id, order_amount, order_amount - LAG(order_amount) OVER (ORDER BY order_date) AS amount_change FROM orders;
+
+-- 29. Compare order amount with next order
+SELECT order_id, order_amount, LEAD(order_amount) OVER (ORDER BY order_date) - order_amount AS change_to_next FROM orders;
