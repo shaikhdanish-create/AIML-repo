@@ -214,3 +214,14 @@ WHERE o.order_amount > (
     FROM orders o2
     WHERE o2.customer_id = o.customer_id
 );
+
+-- 24. CTE: calculate customer spending and show customer names
+WITH customer_spend AS (
+    SELECT customer_id, SUM(order_amount) AS total_spend
+    FROM orders
+    GROUP BY customer_id
+)
+SELECT c.customer_name, s.total_spend
+FROM customers c
+JOIN customer_spend s ON c.customer_id = s.customer_id
+ORDER BY s.total_spend DESC;
