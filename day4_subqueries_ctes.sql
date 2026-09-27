@@ -124,3 +124,8 @@ WHERE NOT EXISTS (
     FROM orders o
     WHERE o.customer_id = c.customer_id
 );
+
+-- 14. Subquery: orders above the average order amount
+SELECT order_id, customer_id, order_amount
+FROM orders
+WHERE order_amount > (SELECT AVG(order_amount) FROM orders);
