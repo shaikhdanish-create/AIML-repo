@@ -116,3 +116,6 @@ SELECT first_name, department, salary, SUM(salary) OVER (PARTITION BY department
 
 -- 27. Employee salary share of department total
 SELECT first_name, department, salary, ROUND(100.0 * salary / SUM(salary) OVER (PARTITION BY department), 2) AS salary_share FROM employees;
+
+-- 28. Compare order amount with previous order
+SELECT order_id, order_amount, order_amount - LAG(order_amount) OVER (ORDER BY order_date) AS amount_change FROM orders;
