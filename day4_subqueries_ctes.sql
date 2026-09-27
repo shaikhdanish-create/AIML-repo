@@ -248,3 +248,13 @@ WHERE e.salary = (
     FROM employees e2
     WHERE e2.department = e.department
 );
+
+-- 27. CTE: list orders with a simple date-based filter
+WITH recent_orders AS (
+    SELECT order_id, customer_id, order_date, order_amount
+    FROM orders
+    WHERE order_date >= '2026-01-01'
+)
+SELECT order_id, customer_id, order_date, order_amount
+FROM recent_orders
+ORDER BY order_date;
