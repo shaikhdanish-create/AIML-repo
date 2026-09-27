@@ -86,3 +86,6 @@ SELECT order_id, order_date, LAG(order_date) OVER (ORDER BY order_date) AS previ
 
 -- 17. Find the next order date
 SELECT order_id, order_date, LEAD(order_date) OVER (ORDER BY order_date) AS next_date FROM orders;
+
+-- 18. Calculate salary difference from department maximum
+SELECT first_name, department, salary, MAX(salary) OVER (PARTITION BY department) - salary AS difference_from_max FROM employees;
