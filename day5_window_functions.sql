@@ -110,3 +110,6 @@ SELECT first_name, department, salary, MAX(salary) OVER (PARTITION BY department
 
 -- 25. Lowest salary in each department
 SELECT first_name, department, salary, MIN(salary) OVER (PARTITION BY department) AS min_dept_salary FROM employees;
+
+-- 26. Total salary by department without GROUP BY
+SELECT first_name, department, salary, SUM(salary) OVER (PARTITION BY department) AS dept_total_salary FROM employees;
