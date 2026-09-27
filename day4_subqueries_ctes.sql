@@ -195,3 +195,13 @@ WITH department_counts AS (
 SELECT department, employee_count
 FROM department_counts
 ORDER BY employee_count DESC;
+
+-- 22. Subquery: customers spending more than 2000
+SELECT customer_id, customer_name
+FROM customers
+WHERE customer_id IN (
+    SELECT customer_id
+    FROM orders
+    GROUP BY customer_id
+    HAVING SUM(order_amount) > 2000
+);
