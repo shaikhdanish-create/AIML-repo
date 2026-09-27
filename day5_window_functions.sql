@@ -122,3 +122,6 @@ SELECT order_id, order_amount, order_amount - LAG(order_amount) OVER (ORDER BY o
 
 -- 29. Compare order amount with next order
 SELECT order_id, order_amount, LEAD(order_amount) OVER (ORDER BY order_date) - order_amount AS change_to_next FROM orders;
+
+-- 30. Rank customers' orders by amount
+SELECT customer_id, order_id, order_amount, RANK() OVER (PARTITION BY customer_id ORDER BY order_amount DESC) AS customer_order_rank FROM orders;
