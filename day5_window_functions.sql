@@ -98,3 +98,6 @@ SELECT order_id, order_amount, ROUND(100.0 * order_amount / SUM(order_amount) OV
 
 -- 21. Rank orders by amount
 SELECT order_id, order_amount, ROW_NUMBER() OVER (ORDER BY order_amount DESC) AS amount_position FROM orders;
+
+-- 22. Running order count
+SELECT order_id, order_date, COUNT(*) OVER (ORDER BY order_date) AS running_order_count FROM orders;
