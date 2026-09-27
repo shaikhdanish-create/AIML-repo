@@ -85,3 +85,9 @@ SELECT h.customer_id, h.total_spend, o.total_orders
 FROM high_spenders h
 JOIN order_counts o ON h.customer_id = o.customer_id
 ORDER BY h.total_spend DESC;
+
+
+-- 9. Subquery: employees earning the minimum salary
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary = (SELECT MIN(salary) FROM employees);
