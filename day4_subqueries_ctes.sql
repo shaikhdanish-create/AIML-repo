@@ -91,3 +91,8 @@ ORDER BY h.total_spend DESC;
 SELECT first_name, last_name, salary
 FROM employees
 WHERE salary = (SELECT MIN(salary) FROM employees);
+
+-- 10. Subquery: employees earning the maximum salary
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary = (SELECT MAX(salary) FROM employees);
