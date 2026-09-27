@@ -80,3 +80,6 @@ SELECT first_name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_ran
 
 -- 15. Number orders for each customer
 SELECT customer_id, order_id, ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY order_date) AS order_num FROM orders;
+
+-- 16. Find the previous order date
+SELECT order_id, order_date, LAG(order_date) OVER (ORDER BY order_date) AS previous_date FROM orders;
