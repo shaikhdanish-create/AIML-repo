@@ -175,3 +175,13 @@ WITH high_value_orders AS (
 SELECT order_id, customer_id, order_amount
 FROM high_value_orders
 ORDER BY order_amount DESC;
+
+-- 20. CTE: count orders for each customer
+WITH customer_orders AS (
+    SELECT customer_id, COUNT(order_id) AS order_count
+    FROM orders
+    GROUP BY customer_id
+)
+SELECT customer_id, order_count
+FROM customer_orders
+ORDER BY order_count DESC;
