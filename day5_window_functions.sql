@@ -83,3 +83,6 @@ SELECT customer_id, order_id, ROW_NUMBER() OVER (PARTITION BY customer_id ORDER 
 
 -- 16. Find the previous order date
 SELECT order_id, order_date, LAG(order_date) OVER (ORDER BY order_date) AS previous_date FROM orders;
+
+-- 17. Find the next order date
+SELECT order_id, order_date, LEAD(order_date) OVER (ORDER BY order_date) AS next_date FROM orders;
