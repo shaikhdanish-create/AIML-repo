@@ -113,3 +113,6 @@ SELECT first_name, department, salary, MIN(salary) OVER (PARTITION BY department
 
 -- 26. Total salary by department without GROUP BY
 SELECT first_name, department, salary, SUM(salary) OVER (PARTITION BY department) AS dept_total_salary FROM employees;
+
+-- 27. Employee salary share of department total
+SELECT first_name, department, salary, ROUND(100.0 * salary / SUM(salary) OVER (PARTITION BY department), 2) AS salary_share FROM employees;
