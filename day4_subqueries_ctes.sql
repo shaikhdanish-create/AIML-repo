@@ -258,3 +258,15 @@ WITH recent_orders AS (
 SELECT order_id, customer_id, order_date, order_amount
 FROM recent_orders
 ORDER BY order_date;
+
+-- 28. Final CTE practice: customers with at least two orders
+WITH customer_order_counts AS (
+    SELECT customer_id, COUNT(order_id) AS order_count
+    FROM orders
+    GROUP BY customer_id
+)
+SELECT c.customer_name, x.order_count
+FROM customers c
+JOIN customer_order_counts x ON c.customer_id = x.customer_id
+WHERE x.order_count >= 2
+ORDER BY x.order_count DESC;
