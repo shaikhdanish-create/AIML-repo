@@ -165,3 +165,13 @@ WITH city_spend AS (
 SELECT city, total_spend
 FROM city_spend
 ORDER BY total_spend DESC;
+
+-- 19. CTE: find high-value orders
+WITH high_value_orders AS (
+    SELECT order_id, customer_id, order_amount
+    FROM orders
+    WHERE order_amount > 1000
+)
+SELECT order_id, customer_id, order_amount
+FROM high_value_orders
+ORDER BY order_amount DESC;
