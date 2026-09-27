@@ -225,3 +225,17 @@ SELECT c.customer_name, s.total_spend
 FROM customers c
 JOIN customer_spend s ON c.customer_id = s.customer_id
 ORDER BY s.total_spend DESC;
+
+-- 25. CTE: customers whose spending is above average customer spending
+WITH customer_spend AS (
+    SELECT customer_id, SUM(order_amount) AS total_spend
+    FROM orders
+    GROUP BY customer_id
+),
+average_spend AS (
+    SELECT AVG(total_spend) AS avg_spend
+    FROM customer_spend
+)
+SELECT customer_id, total_spend
+FROM customer_spend
+WHERE total_spend > (SELECT avg_spend FROM average_spend);
