@@ -125,3 +125,8 @@ SELECT order_id, order_amount, LEAD(order_amount) OVER (ORDER BY order_date) - o
 
 -- 30. Rank customers' orders by amount
 SELECT customer_id, order_id, order_amount, RANK() OVER (PARTITION BY customer_id ORDER BY order_amount DESC) AS customer_order_rank FROM orders;
+
+-- 31. Cumulative sales using an explicit window frame
+SELECT order_id, order_date, order_amount,
+       SUM(order_amount) OVER (ORDER BY order_date ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_sales
+FROM orders;
