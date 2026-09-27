@@ -144,3 +144,13 @@ WITH customer_totals AS (
 SELECT customer_id, total_spend
 FROM customer_totals
 ORDER BY total_spend DESC;
+
+-- 17. CTE: average order amount by customer
+WITH customer_avg AS (
+    SELECT customer_id, AVG(order_amount) AS avg_order
+    FROM orders
+    GROUP BY customer_id
+)
+SELECT customer_id, avg_order
+FROM customer_avg
+ORDER BY avg_order DESC;
