@@ -239,3 +239,12 @@ average_spend AS (
 SELECT customer_id, total_spend
 FROM customer_spend
 WHERE total_spend > (SELECT avg_spend FROM average_spend);
+
+-- 26. Correlated subquery: highest-paid employee in each department
+SELECT e.first_name, e.last_name, e.department, e.salary
+FROM employees e
+WHERE e.salary = (
+    SELECT MAX(e2.salary)
+    FROM employees e2
+    WHERE e2.department = e.department
+);
