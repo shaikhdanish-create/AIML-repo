@@ -134,3 +134,13 @@ WHERE order_amount > (SELECT AVG(order_amount) FROM orders);
 SELECT order_id, customer_id, order_date, order_amount
 FROM orders
 WHERE order_date = (SELECT MAX(order_date) FROM orders);
+
+-- 16. CTE: total spending for each customer
+WITH customer_totals AS (
+    SELECT customer_id, SUM(order_amount) AS total_spend
+    FROM orders
+    GROUP BY customer_id
+)
+SELECT customer_id, total_spend
+FROM customer_totals
+ORDER BY total_spend DESC;
