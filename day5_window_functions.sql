@@ -104,3 +104,6 @@ SELECT order_id, order_date, COUNT(*) OVER (ORDER BY order_date) AS running_orde
 
 -- 23. Running average of order amounts
 SELECT order_id, order_date, AVG(order_amount) OVER (ORDER BY order_date) AS running_average FROM orders;
+
+-- 24. Highest salary in each department
+SELECT first_name, department, salary, MAX(salary) OVER (PARTITION BY department) AS max_dept_salary FROM employees;
