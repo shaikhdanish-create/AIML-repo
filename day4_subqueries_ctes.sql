@@ -154,3 +154,14 @@ WITH customer_avg AS (
 SELECT customer_id, avg_order
 FROM customer_avg
 ORDER BY avg_order DESC;
+
+-- 18. CTE: total spending by customer city
+WITH city_spend AS (
+    SELECT c.city, SUM(o.order_amount) AS total_spend
+    FROM customers c
+    JOIN orders o ON c.customer_id = o.customer_id
+    GROUP BY c.city
+)
+SELECT city, total_spend
+FROM city_spend
+ORDER BY total_spend DESC;
