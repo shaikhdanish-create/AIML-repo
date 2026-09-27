@@ -205,3 +205,12 @@ WHERE customer_id IN (
     GROUP BY customer_id
     HAVING SUM(order_amount) > 2000
 );
+
+-- 23. Correlated subquery: orders above each customer's average
+SELECT o.order_id, o.customer_id, o.order_amount
+FROM orders o
+WHERE o.order_amount > (
+    SELECT AVG(o2.order_amount)
+    FROM orders o2
+    WHERE o2.customer_id = o.customer_id
+);
