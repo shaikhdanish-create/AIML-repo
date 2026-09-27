@@ -101,3 +101,6 @@ SELECT order_id, order_amount, ROW_NUMBER() OVER (ORDER BY order_amount DESC) AS
 
 -- 22. Running order count
 SELECT order_id, order_date, COUNT(*) OVER (ORDER BY order_date) AS running_order_count FROM orders;
+
+-- 23. Running average of order amounts
+SELECT order_id, order_date, AVG(order_amount) OVER (ORDER BY order_date) AS running_average FROM orders;
