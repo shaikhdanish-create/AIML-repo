@@ -1,0 +1,87 @@
+-- day4_subqueries_ctes.sql
+--
+-- Day 4 of 7-day SQL roadmap: Subqueries & CTEs
+-- Topics: subqueries in WHERE/FROM, correlated subqueries, CTEs (WITH ... AS)
+--
+-- Assumes sample tables:
+-- employees(employee_id, first_name, last_name, department, salary)
+-- orders(order_id, customer_id, order_date, order_amount)
+-- customers(customer_id, customer_name, city)
+
+-- 1. Simple subquery in WHERE: employees earning above the company average
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees);
+
+-- 2. Subquery with IN: customers who have placed at least one order
+SELECT customer_name
+FROM customers
+WHERE customer_id IN (SELECT DISTINCT customer_id FROM orders);
+
+-- 3. Subquery with NOT IN: customers who have never placed an order
+SELECT customer_name
+FROM customers
+WHERE customer_id NOT IN (SELECT customer_id FROM orders);
+
+-- 4. Correlated subquery: employees earning above THEIR department's average
+SELECT e.first_name, e.department, e.salary
+FROM employees e
+WHERE e.salary > (
+    SELECT AVG(salary)
+    FROM employees
+    WHERE department = e.department
+);
+
+-- 5. Subquery in FROM (derived table): department averages, filtered
+SELECT department, avg_salary
+FROM (
+    SELECT department, AVG(salary) AS avg_salary
+    FROM employees
+    GROUP BY department
+) AS dept_averages
+WHERE avg_salary > 55000;
+
+-- 6. CTE version of #4: same result, more readable
+WITH dept_avg AS (
+    SELECT department, AVG(salary) AS avg_salary
+    FROM employees
+    GROUP BY department
+)
+SELECT e.first_name, e.department, e.salary, d.avg_salary
+FROM employees e
+JOIN dept_avg d ON e.department = d.department
+WHERE e.salary > d.avg_salary;
+
+-- 7. CTE with multiple steps: top spender per city
+WITH customer_spend AS (
+    SELECT c.customer_id, c.customer_name, c.city,
+           SUM(o.order_amount) AS total_spend
+    FROM customers c
+    JOIN orders o ON c.customer_id = o.customer_id
+    GROUP BY c.customer_id, c.customer_name, c.city
+),
+ranked_spend AS (
+    SELECT *,
+           RANK() OVER (PARTITION BY city ORDER BY total_spend DESC) AS spend_rank
+    FROM customer_spend
+)
+SELECT customer_name, city, total_spend
+FROM ranked_spend
+WHERE spend_rank = 1;
+
+-- 8. Multiple CTEs chained together: high-value customers and their order count
+WITH high_spenders AS (
+    SELECT customer_id, SUM(order_amount) AS total_spend
+    FROM orders
+    GROUP BY customer_id
+    HAVING SUM(order_amount) > 1000
+),
+order_counts AS (
+    SELECT customer_id, COUNT(order_id) AS total_orders
+    FROM orders
+    GROUP BY customer_id
+)
+SELECT h.customer_id, h.total_spend, o.total_orders
+FROM high_spenders h
+JOIN order_counts o ON h.customer_id = o.customer_id
+ORDER BY h.total_spend DESC;
