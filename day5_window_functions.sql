@@ -74,3 +74,6 @@ SELECT first_name, department, ROW_NUMBER() OVER (ORDER BY first_name) AS name_n
 
 -- 13. Rank all employees by salary
 SELECT first_name, salary, RANK() OVER (ORDER BY salary DESC) AS overall_rank FROM employees;
+
+-- 14. Dense rank employees by salary
+SELECT first_name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank FROM employees;
