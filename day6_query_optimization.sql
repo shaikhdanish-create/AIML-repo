@@ -26,6 +26,6 @@ Kept today light — took a query I'd normally write without thinking (SELECT *)
   database is actually doing under the hood. Still wrapping my head around indexes, 
   but the idea that customer_id without an index means scanning
   every row makes a lot more sense now.   
-
+  
   
   
