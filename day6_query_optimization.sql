@@ -6,7 +6,7 @@
 SELECT * FROM orders WHERE customer_id = 1042;
 
 -- After: only grabbing the columns I actually need
-SELECT order_id, order_date, order_amount
+SELECT order_id, order_date, order_amount  
 FROM orders
 WHERE customer_id = 1042;
 
