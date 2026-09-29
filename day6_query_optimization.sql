@@ -23,7 +23,7 @@ WHERE customer_id = 1042;
 description 
 Kept today light — took a query I'd normally write without thinking (SELECT *) and compared 
   it to a version that only grabs the columns I need. Ran EXPLAIN on it just to see what the
-  database is actually doing under the hood. Still wrapping my head around indexes, 
+  database is actually doing under the hood. Still wrapping my head around indexes,   
   but the idea that customer_id without an index means scanning
   every row makes a lot more sense now.   
   
