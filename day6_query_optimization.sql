@@ -4,7 +4,7 @@
 
 -- Before: pulling everything, no idea how slow this actually is
 SELECT * FROM orders WHERE customer_id = 1042;
-  
+    
 -- After: only grabbing the columns I actually need
 SELECT order_id, order_date, order_amount  
 FROM orders
