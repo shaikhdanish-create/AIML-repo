@@ -2,7 +2,7 @@
 -- Day 7: wrapping up the week by tying SQL back to the ML side of things.  
 -- Basically prepping data the way I'd want it before feeding it into a model.
   
--- Pulling a couple of basic features per customer from their orders
+-- Pulling a couple of basic features per customer from their orders  
 SELECT customer_id,
        COUNT(order_id) AS total_orders,
        SUM(order_amount) AS total_spend
