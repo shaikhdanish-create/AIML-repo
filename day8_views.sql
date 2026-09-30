@@ -12,7 +12,7 @@ GROUP BY customer_id;
 
 -- Now I can just query the view like it's a normal table
 SELECT * FROM customer_ml_features
-WHERE total_spend > 500;
+WHERE total_spend > 500;  
 
 -- Note to self: a view doesn't store data, it just re-runs the query
 -- underneath every time you select from it - handy for keeping the
