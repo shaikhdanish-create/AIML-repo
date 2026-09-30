@@ -4,7 +4,7 @@
 
 -- Turning yesterday's feature engineering query into a reusable view
 CREATE VIEW customer_ml_features AS
-SELECT customer_id,
+SELECT customer_id,  
        COUNT(order_id) AS total_orders,
        SUM(order_amount) AS total_spend
 FROM orders
