@@ -19,3 +19,6 @@ FROM customer_features;
 
 -- This is basically the same idea from my churn feature engineering script,
 -- just a reminder of how SQL fits into the ML pipeline before pandas/sklearn.
+
+SELECT DISTINCT city
+FROM students;
