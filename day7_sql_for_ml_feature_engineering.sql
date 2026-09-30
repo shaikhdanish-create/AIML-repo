@@ -22,3 +22,5 @@ FROM customer_features;
 
 SELECT DISTINCT city
 FROM students;
+
+DROP TABLE students;
