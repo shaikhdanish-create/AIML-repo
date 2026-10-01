@@ -40,3 +40,9 @@ SELECT customer_id AS customer,
        total_orders AS orders,
        total_spend AS spending
 FROM customer_ml_features;
+
+-- Sixth practice: show customers with both useful features together.
+SELECT customer_id, total_orders, total_spend
+FROM customer_ml_features
+WHERE total_orders >= 2
+  AND total_spend >= 500;
