@@ -24,3 +24,8 @@ SELECT * FROM customer_ml_features;
 -- Second practice: select only the useful feature columns.
 SELECT customer_id, total_spend
 FROM customer_ml_features;
+
+-- Third practice: sort customers by their total spending.
+SELECT customer_id, total_spend
+FROM customer_ml_features
+ORDER BY total_spend DESC;
