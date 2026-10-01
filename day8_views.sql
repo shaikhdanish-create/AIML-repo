@@ -29,3 +29,8 @@ FROM customer_ml_features;
 SELECT customer_id, total_spend
 FROM customer_ml_features
 ORDER BY total_spend DESC;
+
+-- Fourth practice: find customers who placed more than three orders.
+SELECT customer_id, total_orders
+FROM customer_ml_features
+WHERE total_orders > 3;
