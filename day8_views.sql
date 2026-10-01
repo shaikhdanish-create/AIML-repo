@@ -44,3 +44,13 @@ FROM customer_ml_features;
 SELECT customer_id
 FROM customer_ml_features
 WHERE total_orders = 0;
+
+-- Fourteenth practice: create a simple spending segment for analysis.
+SELECT customer_id,
+       total_spend,
+       CASE
+           WHEN total_spend >= 1000 THEN 'High'
+           WHEN total_spend >= 500 THEN 'Medium'
+           ELSE 'Low'
+       END AS spending_level
+FROM customer_ml_features;
