@@ -27,3 +27,7 @@ FROM customer_ml_features;
 -- Ninth practice: find the average spending across customers.
 SELECT AVG(total_spend) AS average_spend
 FROM customer_ml_features;
+
+-- Tenth practice: find the largest customer spend.
+SELECT MAX(total_spend) AS highest_spend
+FROM customer_ml_features;
