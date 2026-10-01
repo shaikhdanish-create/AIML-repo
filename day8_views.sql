@@ -20,3 +20,7 @@ WHERE total_spend > 500;
 
 -- First extra practice: check all customers from the reusable view.
 SELECT * FROM customer_ml_features;
+
+-- Second practice: select only the useful feature columns.
+SELECT customer_id, total_spend
+FROM customer_ml_features;
