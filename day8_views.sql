@@ -31,3 +31,7 @@ FROM customer_ml_features;
 -- Tenth practice: find the largest customer spend.
 SELECT MAX(total_spend) AS highest_spend
 FROM customer_ml_features;
+
+-- Eleventh practice: find the smallest customer spend.
+SELECT MIN(total_spend) AS lowest_spend
+FROM customer_ml_features;
