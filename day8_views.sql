@@ -23,3 +23,7 @@ SELECT customer_id, total_spend FROM customer_ml_features ORDER BY total_spend D
 -- Eighth practice: count how many customers are represented in the view.
 SELECT COUNT(*) AS customer_count
 FROM customer_ml_features;
+
+-- Ninth practice: find the average spending across customers.
+SELECT AVG(total_spend) AS average_spend
+FROM customer_ml_features;
