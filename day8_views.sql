@@ -54,3 +54,6 @@ SELECT customer_id,
            ELSE 'Low'
        END AS spending_level
 FROM customer_ml_features;
+
+-- Final note: keep this view focused on reusable customer-level features.
+-- More complex analysis can build on this view instead of repeating the base query.
