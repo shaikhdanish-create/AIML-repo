@@ -35,3 +35,7 @@ FROM customer_ml_features;
 -- Eleventh practice: find the smallest customer spend.
 SELECT MIN(total_spend) AS lowest_spend
 FROM customer_ml_features;
+
+-- Twelfth practice: calculate the total spending across all customers.
+SELECT SUM(total_spend) AS all_customer_spend
+FROM customer_ml_features;
