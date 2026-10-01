@@ -39,3 +39,8 @@ FROM customer_ml_features;
 -- Twelfth practice: calculate the total spending across all customers.
 SELECT SUM(total_spend) AS all_customer_spend
 FROM customer_ml_features;
+
+-- Thirteenth practice: find customers with no recorded orders.
+SELECT customer_id
+FROM customer_ml_features
+WHERE total_orders = 0;
