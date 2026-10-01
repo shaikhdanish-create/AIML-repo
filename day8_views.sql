@@ -46,3 +46,9 @@ SELECT customer_id, total_orders, total_spend
 FROM customer_ml_features
 WHERE total_orders >= 2
   AND total_spend >= 500;
+
+-- Seventh practice: see the highest spending customers first.
+SELECT customer_id, total_spend
+FROM customer_ml_features
+ORDER BY total_spend DESC
+LIMIT 10;
