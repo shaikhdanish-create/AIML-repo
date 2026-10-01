@@ -34,3 +34,9 @@ ORDER BY total_spend DESC;
 SELECT customer_id, total_orders
 FROM customer_ml_features
 WHERE total_orders > 3;
+
+-- Fifth practice: give the calculated columns shorter labels for reading.
+SELECT customer_id AS customer,
+       total_orders AS orders,
+       total_spend AS spending
+FROM customer_ml_features;
