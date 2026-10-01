@@ -14,6 +14,9 @@ GROUP BY customer_id;
 SELECT * FROM customer_ml_features
 WHERE total_spend > 500;  
 
--- Note to self: a view doesn't store data, it just re-runs the query  
+-- Note to self: a view doesn't store data, it just re-runs the query
 -- underneath every time you select from it - handy for keeping the
 -- ML feature logic in one place instead of copy-pasting it everywhere.
+
+-- First extra practice: check all customers from the reusable view.
+SELECT * FROM customer_ml_features;
