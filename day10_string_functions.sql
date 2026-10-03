@@ -1,5 +1,5 @@
 -- day10_string_functions.sql
--- Day 10: cleaning up messy text data today. Feels like a natural
+-- Day 10: cleaning up messy text data today. Feels like a natural  
 -- follow-up to yesterday's NULL stuff - different flavor of "dirty data."
 
 -- TRIM: get rid of stray whitespace around values
