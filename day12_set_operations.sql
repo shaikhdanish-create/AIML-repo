@@ -23,3 +23,21 @@ SELECT customer_id FROM customers WHERE city = 'Nagpur';
 -- Note to self: UNION needs both queries to have the same number of
 -- columns, and matching-ish data types - learned that one from a
 -- UNION ALL is faster because SQL doesn't need to check for duplicates.
+
+-- easy to remeber 
+
+-- JOIN
+-- → combines columns
+-- → side by side
+
+-- UNION
+-- → combines rows
+-- → removes duplicates
+
+-- UNION ALL
+-- → combines rows
+-- → keeps duplicates
+
+-- INTERSECT
+-- → common rows/values
+-- → exists in both
