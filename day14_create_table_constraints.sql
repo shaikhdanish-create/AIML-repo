@@ -1,5 +1,5 @@
 -- day14_create_table_constraints.sql
--- Day 14: two weeks in! Until now I've only been querying tables that  
+-- Day 14: two weeks in! Until now I've only been querying tables that   
 -- already existed, so today I tried building one from scratch.
 
 -- CREATE TABLE with a primary key and a few constraints       
