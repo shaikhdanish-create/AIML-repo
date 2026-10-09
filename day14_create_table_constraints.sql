@@ -8,7 +8,7 @@ CREATE TABLE customers (
     customer_name VARCHAR(100) NOT NULL,
     city          VARCHAR(50),
     signup_date   DATE DEFAULT CURRENT_DATE
-);
+);  
 
 -- A second table linked to the first with a foreign key
 CREATE TABLE orders (
