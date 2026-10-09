@@ -11,7 +11,7 @@ CREATE TABLE customers (
 );  
 
 -- A second table linked to the first with a foreign key
-CREATE TABLE orders (
+CREATE TABLE orders (    
     order_id     INT PRIMARY KEY,
     customer_id  INT,
     order_amount DECIMAL(10, 2) CHECK (order_amount >= 0),
