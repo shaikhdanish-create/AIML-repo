@@ -2,7 +2,7 @@
 -- Day 14: two weeks in! Until now I've only been querying tables that
 -- already existed, so today I tried building one from scratch.
 
--- CREATE TABLE with a primary key and a few constraints
+-- CREATE TABLE with a primary key and a few constraints       
 CREATE TABLE customers (
     customer_id   INT PRIMARY KEY,
     customer_name VARCHAR(100) NOT NULL,
@@ -27,4 +27,4 @@ VALUES (101, 1, 450.00);
 
 -- Note to self: the foreign key stops me from adding an order for a
 -- customer_id that doesn't exist - kind of annoying while testing, but
--- it's exactly what keeps the data clean for ML later.
+-- it's exactly what keeps the data clean for ML later. 
