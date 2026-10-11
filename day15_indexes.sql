@@ -18,6 +18,6 @@ ON orders (customer_id, order_date);
 
 -- Removing an index I don't need anymore
 DROP INDEX idx_orders_customer_id ON orders;
-
+  
 -- Note to self: indexes make reads faster but slow down INSERTs and
 -- UPDATEs a little, so I shouldn't just add one to every column.
