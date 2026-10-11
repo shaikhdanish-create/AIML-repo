@@ -4,7 +4,7 @@
 -- creating one, so today I actually did it.
 
 -- Creating an index on the column I keep filtering by
-CREATE INDEX idx_orders_customer_id
+CREATE INDEX idx_orders_customer_id  
 ON orders (customer_id);
 
 -- Same query as Day 6, but now the database has a shortcut to use
