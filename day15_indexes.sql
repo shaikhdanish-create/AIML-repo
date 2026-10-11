@@ -1,5 +1,5 @@
 -- day15_indexes.sql
--- Day 15: going back to something I only talked about on Day 6.
+-- learning SQL indexes - CREATE INDEX and DROP INDEX
 -- Back then I wrote "an index would help" in a comment without ever
 -- creating one, so today I actually did it.
 
