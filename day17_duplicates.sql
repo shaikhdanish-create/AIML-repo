@@ -3,7 +3,7 @@
 -- would quietly mess up a model if I didn't catch it first.
 
 -- Finding duplicate customers (same name and city showing up twice)
-SELECT customer_name, city, COUNT(*) AS times_seen
+SELECT customer_name, city, COUNT(*) AS times_seen  
 FROM customers
 GROUP BY customer_name, city
 HAVING COUNT(*) > 1;
