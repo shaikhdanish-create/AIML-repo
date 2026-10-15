@@ -1,5 +1,5 @@
 -- day17_duplicates.sql
--- Day 17: duplicates. Another one of those "dirty data" problems that
+-- Day 17: duplicates. Another one of those "dirty data" problems that 
 -- would quietly mess up a model if I didn't catch it first.
 
 -- Finding duplicate customers (same name and city showing up twice)
@@ -31,6 +31,6 @@ WHERE customer_id IN (
     WHERE copy_number > 1
 );
 
--- Note to self: run the SELECT version first and check the rows before
+-- Note to self: run the SELECT version first and check the rows before 
 -- running the DELETE. Wrapping it in a transaction like on Day 13 is
 -- a good safety net too.
