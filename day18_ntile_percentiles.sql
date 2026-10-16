@@ -5,7 +5,7 @@
 -- NTILE: split customers into 4 equal groups (quartiles) by spend
 SELECT customer_id,
        total_spend,
-       NTILE(4) OVER (ORDER BY total_spend DESC) AS spend_quartile
+       NTILE(4) OVER (ORDER BY total_spend DESC) AS spend_quartile  
 FROM customer_ml_features;
 
 -- PERCENT_RANK: where does each customer sit compared to everyone else?
