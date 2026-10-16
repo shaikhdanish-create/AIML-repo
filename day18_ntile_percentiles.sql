@@ -1,5 +1,5 @@
 -- day18_ntile_percentiles.sql
--- Day 18: back to window functions, but a few I skipped on Day 5.
+-- Day 18: back to window functions, but a few I skipped on Day 5.  
 -- NTILE and PERCENT_RANK seem really useful for ML-style binning.
 
 -- NTILE: split customers into 4 equal groups (quartiles) by spend
