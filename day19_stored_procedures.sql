@@ -12,7 +12,7 @@ BEGIN
     FROM customer_ml_features
     WHERE total_spend >= min_spend
     ORDER BY total_spend DESC;
-END // 
+END //   
 
 DELIMITER ;
 
