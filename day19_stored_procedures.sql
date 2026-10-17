@@ -1,5 +1,5 @@
 -- day19_stored_procedures.sql 
--- Day 19: stored procedures. Basically saving a query with a name and
+-- Day 19: stored procedures. Basically saving a query with a name and  
 -- a parameter, so I can call it instead of retyping it every time.
 -- (MySQL syntax - other databases do this a little differently)
 
