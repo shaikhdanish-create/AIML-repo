@@ -156,3 +156,9 @@ WHERE last_name LIKE '%son';
 SELECT first_name, last_name, city
 FROM employees
 ORDER BY city ASC, last_name ASC;
+
+-- Extra practice: show the 10 most recently hired employees
+SELECT first_name, last_name, hire_date
+FROM employees
+ORDER BY hire_date DESC
+LIMIT 10;
