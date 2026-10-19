@@ -125,3 +125,8 @@ FROM employees;
 SELECT first_name, last_name, city
 FROM employees
 WHERE city = 'Mumbai';
+
+-- Extra practice: employees earning 70,000 or more
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary >= 70000;
