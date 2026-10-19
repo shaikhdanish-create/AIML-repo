@@ -141,3 +141,8 @@ WHERE (department = 'Sales' AND salary < 60000)
 SELECT first_name, last_name, department
 FROM employees
 WHERE department NOT IN ('Marketing', 'HR');
+
+-- Extra practice: employees earning from 50,000 to 75,000 (inclusive)
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary BETWEEN 50000 AND 75000;
