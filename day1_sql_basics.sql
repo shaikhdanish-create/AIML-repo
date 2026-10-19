@@ -162,3 +162,10 @@ SELECT first_name, last_name, hire_date
 FROM employees
 ORDER BY hire_date DESC
 LIMIT 10;
+
+-- Final Day 1 practice: list the 5 highest-paid employees in Engineering
+SELECT first_name, last_name, department, salary
+FROM employees
+WHERE department = 'Engineering'
+ORDER BY salary DESC
+LIMIT 5;
