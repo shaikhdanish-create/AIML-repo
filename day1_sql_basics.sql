@@ -130,3 +130,9 @@ WHERE city = 'Mumbai';
 SELECT first_name, last_name, salary
 FROM employees
 WHERE salary >= 70000;
+
+-- Extra practice: Sales employees earning under 60,000, or anyone in HR
+SELECT first_name, last_name, department, salary
+FROM employees
+WHERE (department = 'Sales' AND salary < 60000)
+   OR department = 'HR';
