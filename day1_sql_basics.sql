@@ -146,3 +146,8 @@ WHERE department NOT IN ('Marketing', 'HR');
 SELECT first_name, last_name, salary
 FROM employees
 WHERE salary BETWEEN 50000 AND 75000;
+
+-- Extra practice: find employees whose last name ends with 'son'
+SELECT first_name, last_name
+FROM employees
+WHERE last_name LIKE '%son';
