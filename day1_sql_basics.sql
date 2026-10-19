@@ -136,3 +136,8 @@ SELECT first_name, last_name, department, salary
 FROM employees
 WHERE (department = 'Sales' AND salary < 60000)
    OR department = 'HR';
+
+-- Extra practice: exclude employees from Marketing and HR
+SELECT first_name, last_name, department
+FROM employees
+WHERE department NOT IN ('Marketing', 'HR');
