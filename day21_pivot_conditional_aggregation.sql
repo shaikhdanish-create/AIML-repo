@@ -7,7 +7,7 @@ SELECT customer_id,
        SUM(CASE WHEN EXTRACT(MONTH FROM order_date) BETWEEN 1 AND 3
                 THEN order_amount ELSE 0 END)  AS q1_spend,
        SUM(CASE WHEN EXTRACT(MONTH FROM order_date) BETWEEN 4 AND 6
-                THEN order_amount ELSE 0 END)  AS q2_spend,
+                THEN order_amount ELSE 0 END)  AS q2_spend,  
        SUM(CASE WHEN EXTRACT(MONTH FROM order_date) BETWEEN 7 AND 9
                 THEN order_amount ELSE 0 END)  AS q3_spend,
        SUM(CASE WHEN EXTRACT(MONTH FROM order_date) BETWEEN 10 AND 12
