@@ -20,4 +20,7 @@ GROUP BY customer_id;
 -- earlier ones stuck together. A pivot like this gives each customer
 -- one row with a few features, which is exactly what a model wants.
 
---Three weeks in, and today I turned rows into columns by putting CASE WHEN inside SUM to get one spend column per quarter for each customer. Funny realization: it’s just Day 16 and Day 2 stuck together, and a lot of the later topics keep turning out to be earlier ones combined. It also gives each customer a single row of features, which is the shape an ML model wants
+--Three weeks in, and today I turned rows into columns by putting CASE WHEN inside SUM to get one spend column per 
+--quarter for each customer. Funny realization: it’s just Day 16 and Day 2 stuck together,
+--and a lot of the later topics keep turning out to be earlier ones combined.
+--It also gives each customer a single row of features, which is the shape an ML model wants
