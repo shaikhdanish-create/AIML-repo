@@ -151,3 +151,8 @@ WHERE salary BETWEEN 50000 AND 75000;
 SELECT first_name, last_name
 FROM employees
 WHERE last_name LIKE '%son';
+
+-- Extra practice: sort employees by city, then by last name
+SELECT first_name, last_name, city
+FROM employees
+ORDER BY city ASC, last_name ASC;
