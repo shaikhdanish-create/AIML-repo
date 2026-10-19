@@ -116,3 +116,7 @@ SELECT first_name, last_name FROM employees WHERE city IS NULL;
 SELECT first_name AS employee_first_name, salary AS annual_salary FROM employees;
 
 -- Day 1 complete: foundational filtering, sorting and limiting queries
+
+-- Extra practice: show each employee's city
+SELECT first_name, last_name, city
+FROM employees;
