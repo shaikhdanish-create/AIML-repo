@@ -1,5 +1,5 @@
 -- day22_exists.sql
--- Day 22: EXISTS. I used IN and NOT IN with subqueries back on Day 4,
+-- Day 22: EXISTS. I used IN and NOT IN with subqueries back on Day 4,  
 -- so today I wanted to see what EXISTS does differently.
 
 -- Customers who have placed at least one order
