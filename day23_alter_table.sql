@@ -22,3 +22,5 @@ DROP COLUMN email;
 -- Note to self: DROP COLUMN throws the data away for good, so it's
 -- worth checking twice before running it. Also handy for ML work,
 -- since I can add a new feature column without rebuilding the table.
+
+-- Learned ALTER TABLE to add, rename, and drop columns. Careful with DROP COLUMN, since it deletes the data for good.
