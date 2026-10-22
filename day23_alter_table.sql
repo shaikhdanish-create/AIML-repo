@@ -1,5 +1,5 @@
 -- day23_alter_table.sql
--- Day 23: ALTER TABLE. On Day 14 I built tables from scratch, but I
+-- Day 23: ALTER TABLE. On Day 14 I built tables from scratch, but I  
 -- never thought about what happens when I forget a column later.
 
 -- Adding a new column to an existing table
