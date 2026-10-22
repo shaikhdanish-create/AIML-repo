@@ -7,7 +7,7 @@ ALTER TABLE customers
 ADD COLUMN email VARCHAR(100);
 
 -- Filling it in for one customer
-UPDATE customers
+UPDATE customers 
 SET email = 'aarav@example.com'
 WHERE customer_id = 1;
 
