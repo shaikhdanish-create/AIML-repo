@@ -1,5 +1,5 @@
 -- day24_distinct_pagination.sql
--- Day 24: a small one today. DISTINCT and OFFSET are things I've used
+-- Day 24: a small one today. DISTINCT and OFFSET are things I've used  
 -- a little without really thinking about them.
 
 -- Unique cities in the customers table
