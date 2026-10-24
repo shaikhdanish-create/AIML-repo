@@ -2,7 +2,7 @@
 -- Day 24: a small one today. DISTINCT and OFFSET are things I've used  
 -- a little without really thinking about them.
 
--- Unique cities in the customers table
+-- Unique cities in the customers table  
 SELECT DISTINCT city
 FROM customers;
 
