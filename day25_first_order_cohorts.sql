@@ -10,7 +10,7 @@ WITH first_orders AS (
     GROUP BY customer_id
 )
 -- Step 2: count how many customers started in each month
-SELECT EXTRACT(YEAR FROM first_order_date)  AS yr,
+SELECT EXTRACT(YEAR FROM first_order_date)  AS yr,   
        EXTRACT(MONTH FROM first_order_date) AS mo,
        COUNT(*) AS new_customers
 FROM first_orders
