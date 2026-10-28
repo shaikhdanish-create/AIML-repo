@@ -29,3 +29,5 @@ FROM (
 -- Note to self: MIN on a date gives the earliest one, so it's an easy
 -- way to find "first time" events. This could turn into a good ML
 -- feature later, like how long ago someone became a customer.
+
+--Grouped customers by their first order month using MIN and counted repeat buyers.
