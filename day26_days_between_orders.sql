@@ -1,5 +1,5 @@
 -- day26_days_between_orders.sql
--- Day 26: mixing LAG from Day 5 with the date functions from Day 11.
+-- Day 26: mixing LAG from Day 5 with the date functions from Day 11. 
 -- Goal: how many days pass between a customer's orders?
  
 -- Step 1: put each order next to the customer's previous order date
