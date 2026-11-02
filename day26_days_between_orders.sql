@@ -2,7 +2,7 @@
 -- Day 26: mixing LAG from Day 5 with the date functions from Day 11.   
 -- Goal: how many days pass between a customer's orders?
  
--- Step 1: put each order next to the customer's previous order date  
+-- Step 1: put each order next to the customer's previous order date    
 WITH order_gaps AS (
     SELECT customer_id,
            order_date,
