@@ -19,7 +19,7 @@ gaps AS (
                LAG(order_date) OVER (
                    PARTITION BY customer_id
                    ORDER BY order_date
-               ) AS prev_order_date
+               ) AS prev_order_date  
         FROM orders
     ) x
     WHERE prev_order_date IS NOT NULL
