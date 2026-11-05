@@ -3,7 +3,7 @@
 -- something new, I joined a few earlier ideas into one feature table.
 
 CREATE VIEW customer_feature_table AS
-WITH spend AS (
+WITH spend AS (  
     SELECT customer_id,
            COUNT(order_id)   AS total_orders,
            SUM(order_amount) AS total_spend
