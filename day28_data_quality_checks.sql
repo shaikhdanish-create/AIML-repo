@@ -1,7 +1,7 @@
 -- day28_data_quality_checks.sql
 -- Day 28: four weeks done. Instead of a new topic, I wrote some quick
 -- sanity checks for the feature view from yesterday. Seems smarter to
--- check the data before any model sees it.
+-- check the data before any model sees it. 
 
 -- Does the view have one row per customer, like it should?
 SELECT COUNT(*) AS feature_rows,
