@@ -7,7 +7,7 @@
 SELECT *,
        CASE WHEN MOD(customer_id, 5) = 0 THEN 'test' ELSE 'train' END AS data_split
 FROM customer_feature_table;
-
+  
 -- Checking the split sizes look about right
 SELECT CASE WHEN MOD(customer_id, 5) = 0 THEN 'test' ELSE 'train' END AS data_split,
        COUNT(*) AS rows_in_split 
