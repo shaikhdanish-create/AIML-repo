@@ -1,5 +1,5 @@
 -- day29_train_test_split.sql
--- Day 29: splitting data into train and test sets directly in SQL.      
+-- Day 29: splitting data into train and test sets directly in SQL.        
 -- I only ever did this in sklearn before, so this felt new.
  
 -- Using the customer_id to split roughly 80/20
