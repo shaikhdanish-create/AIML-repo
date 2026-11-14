@@ -13,7 +13,7 @@ SELECT CASE WHEN MOD(customer_id, 5) = 0 THEN 'test' ELSE 'train' END AS data_sp
        COUNT(*) AS rows_in_split 
 FROM customer_feature_table
 GROUP BY data_split;
-
+  
 -- Note to self: a split based on the ID is repeatable, so I get the
 -- same train and test rows every time I run it. A random split would
 -- change on each run, which makes results hard to compare. It only
