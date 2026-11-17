@@ -1,4 +1,4 @@
--- day1_sql_basics.sql
+-- day1_sql_basics.sql  
 --  
 -- Day 1 of 7-day SQL roadmap: Basics
 -- Topics: SELECT, WHERE, ORDER BY, LIMIT, comparison & logical operators
