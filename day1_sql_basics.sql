@@ -8,7 +8,7 @@
 
 -- 1. Basic SELECT: view all employee names and departments
 SELECT first_name, last_name, department
-FROM employees;  
+FROM employees;    
 
 -- 2. WHERE: filter employees in the Sales department
 SELECT first_name, last_name, department, salary
