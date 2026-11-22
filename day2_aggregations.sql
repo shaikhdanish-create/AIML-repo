@@ -1,5 +1,5 @@
 -- day2_aggregations.sql
---  
+--    
 -- Day 2 of 7-day SQL roadmap: Aggregations
 -- Topics: COUNT, SUM, AVG, MIN, MAX, GROUP BY, HAVING
 --
