@@ -6,7 +6,7 @@
 -- Assumes sample tables:
 -- employees(employee_id, first_name, last_name, department, salary, hire_date)
 -- orders(order_id, customer_id, order_date, order_amount)
-
+   
 -- 1. COUNT: total number of employees
 SELECT COUNT(*) AS total_employees
 FROM employees;
